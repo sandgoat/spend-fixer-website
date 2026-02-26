@@ -4,7 +4,6 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
 }
 
 model User {
@@ -14,6 +13,8 @@ model User {
   password  String
   plan      String   @default("free")
   createdAt DateTime @default(now())
+  failedAttempts Int       @default(0)
+  lockedUntil    DateTime?
   updatedAt DateTime @updatedAt
 
   plaidItems   PlaidItem[]

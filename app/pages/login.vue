@@ -5,15 +5,22 @@ useHead({ title: 'Log In' })
 const email = ref('')
 const password = ref('')
 const isLoading = ref(false)
+const error = ref('')
 
 const userStore = useUserStore()
 
 const handleLogin = async () => {
   if (!email.value || !password.value) return
+  error.value = ''
   isLoading.value = true
-  await userStore.login(email.value, password.value)
-  await navigateTo('/app')
-  isLoading.value = false
+  try {
+    await userStore.login(email.value, password.value)
+    await navigateTo('/app')
+  } catch (e: any) {
+    error.value = e?.data?.statusMessage || e?.statusMessage || 'Login failed'
+  } finally {
+    isLoading.value = false
+  }
 }
 </script>
 
@@ -35,6 +42,8 @@ const handleLogin = async () => {
         </NuxtLink>
         <h1 class="mt-8 font-display text-2xl font-bold text-brand-950 lg:mt-0">Welcome back</h1>
         <p class="mt-2 text-sm text-gray-500">Log in to your account</p>
+
+        <p v-if="error" class="mt-4 rounded-lg bg-red-50 px-4 py-3 text-sm text-red-600">{{ error }}</p>
 
         <form class="mt-8 space-y-4" @submit.prevent="handleLogin">
           <div>

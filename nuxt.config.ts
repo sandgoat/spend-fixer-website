@@ -28,6 +28,7 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
+    sessionSecret: process.env.SESSION_SECRET || 'change-me-in-production',
     plaidClientId: '',
     plaidSecret: '',
     plaidEnv: 'sandbox',
