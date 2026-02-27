@@ -492,6 +492,11 @@ const pricingTiers = [
       <div class="mx-auto max-w-7xl px-6 lg:px-10">
         <div class="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
           <img src="/logo.png" alt="SpendFixer" class="h-8">
+          <div class="flex gap-6 text-sm text-gray-400">
+            <NuxtLink to="/privacy" class="hover:text-brand-600">Privacy Policy</NuxtLink>
+            <NuxtLink to="/terms" class="hover:text-brand-600">Terms of Service</NuxtLink>
+            <NuxtLink to="/contact" class="hover:text-brand-600">Contact</NuxtLink>
+          </div>
           <p class="text-sm text-gray-400">&copy; {{ new Date().getFullYear() }} SpendFixer. All rights reserved.</p>
         </div>
       </div>

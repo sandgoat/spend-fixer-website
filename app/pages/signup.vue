@@ -87,7 +87,10 @@ const handleSignup = async () => {
         </form>
 
         <p class="mt-4 text-center text-xs text-gray-400">
-          By signing up, you agree to our Terms and Privacy Policy.
+          By signing up, you agree to our
+          <NuxtLink to="/terms" class="text-brand-600 hover:underline">Terms of Service</NuxtLink>
+          and
+          <NuxtLink to="/privacy" class="text-brand-600 hover:underline">Privacy Policy</NuxtLink>.
         </p>
 
         <p class="mt-6 text-center text-sm text-gray-500">
