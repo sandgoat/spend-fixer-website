@@ -8,7 +8,14 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@vueuse/nuxt',
     '@nuxtjs/color-mode',
+    '@nuxt/content',
   ],
+
+  content: {
+    highlight: {
+      theme: 'github-dark',
+    },
+  },
 
   colorMode: {
     classSuffix: '',

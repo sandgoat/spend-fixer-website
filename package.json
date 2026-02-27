@@ -10,6 +10,7 @@
     "postinstall": "prisma generate && nuxt prepare"
   },
   "dependencies": {
+    "@nuxt/content": "^3.12.0",
     "@nuxtjs/color-mode": "^4.0.0",
     "@nuxtjs/tailwindcss": "^6.14.0",
     "@pinia/nuxt": "^0.11.3",

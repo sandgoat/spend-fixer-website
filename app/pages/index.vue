@@ -213,6 +213,7 @@ const pricingTiers = [
           <a href="#problem" class="text-sm font-medium text-gray-600 transition-colors hover:text-brand-700">The Problem</a>
           <a href="#how" class="text-sm font-medium text-gray-600 transition-colors hover:text-brand-700">How It Works</a>
           <a href="#pricing" class="text-sm font-medium text-gray-600 transition-colors hover:text-brand-700">Pricing</a>
+          <NuxtLink to="/blog" class="text-sm font-medium text-gray-600 transition-colors hover:text-brand-700">Blog</NuxtLink>
         </div>
         <div class="flex items-center gap-3 sm:gap-4">
           <NuxtLink to="/login" class="hidden text-sm font-medium text-gray-600 transition-colors hover:text-brand-700 sm:block">
@@ -597,6 +598,7 @@ const pricingTiers = [
         <div class="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
           <img src="/logo.png" alt="SpendFixer" class="h-8">
           <div class="flex gap-6 text-sm text-gray-400">
+            <NuxtLink to="/blog" class="hover:text-brand-600">Blog</NuxtLink>
             <NuxtLink to="/privacy" class="hover:text-brand-600">Privacy Policy</NuxtLink>
             <NuxtLink to="/terms" class="hover:text-brand-600">Terms of Service</NuxtLink>
             <NuxtLink to="/contact" class="hover:text-brand-600">Contact</NuxtLink>
