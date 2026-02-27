@@ -1,6 +1,23 @@
 <script setup lang="ts">
 definePageMeta({ layout: 'default' })
-useHead({ title: 'Sign Up' })
+
+const siteUrl = 'https://spendfixer.com'
+
+useSeoMeta({
+  title: 'Get Started Free — SpendFixer',
+  description: 'Create your free SpendFixer account. Connect your bank and get your first daily spending snapshot in under 2 minutes.',
+  ogTitle: 'Get Started Free — SpendFixer',
+  ogDescription: 'Create your free SpendFixer account. No credit card required.',
+  ogImage: `${siteUrl}/og-image.png`,
+  ogUrl: `${siteUrl}/signup`,
+  twitterCard: 'summary_large_image',
+  twitterTitle: 'Get Started Free — SpendFixer',
+  twitterDescription: 'Create your free SpendFixer account. No credit card required.',
+})
+
+useHead({
+  link: [{ rel: 'canonical', href: `${siteUrl}/signup` }],
+})
 
 const name = ref('')
 const email = ref('')

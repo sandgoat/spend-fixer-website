@@ -1,6 +1,24 @@
 <script setup lang="ts">
 definePageMeta({ layout: 'default' })
-useHead({ title: 'Log In' })
+
+const siteUrl = 'https://spendfixer.com'
+
+useSeoMeta({
+  title: 'Log In — SpendFixer',
+  description: 'Log in to your SpendFixer account to view your daily spending snapshot and take action on your finances.',
+  ogTitle: 'Log In — SpendFixer',
+  ogDescription: 'Log in to your SpendFixer account.',
+  ogImage: `${siteUrl}/og-image.png`,
+  ogUrl: `${siteUrl}/login`,
+  twitterCard: 'summary_large_image',
+  twitterTitle: 'Log In — SpendFixer',
+  twitterDescription: 'Log in to your SpendFixer account.',
+  robots: 'noindex, follow',
+})
+
+useHead({
+  link: [{ rel: 'canonical', href: `${siteUrl}/login` }],
+})
 
 const email = ref('')
 const password = ref('')

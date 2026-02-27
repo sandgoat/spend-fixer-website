@@ -1,6 +1,7 @@
 <script setup lang="ts">
 definePageMeta({ layout: 'app' })
-useHead({ title: 'Goals' })
+useSeoMeta({ title: 'Goals — SpendFixer', robots: 'noindex, nofollow' })
+useHead({ link: [{ rel: 'canonical', href: 'https://spendfixer.com/app/goals' }] })
 </script>
 
 <template>

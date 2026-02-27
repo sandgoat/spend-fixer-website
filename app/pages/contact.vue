@@ -1,6 +1,23 @@
 <script setup lang="ts">
 definePageMeta({ layout: 'default' })
-useHead({ title: 'Contact — SpendFixer' })
+
+const siteUrl = 'https://spendfixer.com'
+
+useSeoMeta({
+  title: 'Contact Us — SpendFixer',
+  description: 'Get in touch with the SpendFixer team. We\'re here to help with questions about your account, billing, or anything else.',
+  ogTitle: 'Contact Us — SpendFixer',
+  ogDescription: 'Get in touch with the SpendFixer team.',
+  ogImage: `${siteUrl}/og-image.png`,
+  ogUrl: `${siteUrl}/contact`,
+  twitterCard: 'summary_large_image',
+  twitterTitle: 'Contact Us — SpendFixer',
+  twitterDescription: 'Get in touch with the SpendFixer team.',
+})
+
+useHead({
+  link: [{ rel: 'canonical', href: `${siteUrl}/contact` }],
+})
 
 // TODO: support@spendfixer.com needs to be configured before this goes live.
 // Recommended: Zoho Mail (free tier supports custom domains) or Postmark for transactional.

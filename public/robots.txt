@@ -1,2 +1,5 @@
 User-Agent: *
-Disallow:
+Disallow: /app/
+Disallow: /api/
+
+Sitemap: https://spendfixer.com/sitemap.xml

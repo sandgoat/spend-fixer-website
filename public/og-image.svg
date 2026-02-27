@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#16a34a"/>
+      <stop offset="100%" style="stop-color:#22c55e"/>
+    </linearGradient>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Subtle grid pattern -->
+  <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+    <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#1e293b" stroke-width="1"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#grid)" opacity="0.4"/>
+
+  <!-- Top accent bar -->
+  <rect width="1200" height="6" fill="url(#accent)"/>
+
+  <!-- Logo mark — green dollar circle -->
+  <circle cx="600" cy="220" r="60" fill="#16a34a" opacity="0.15"/>
+  <circle cx="600" cy="220" r="48" fill="#16a34a" opacity="0.2"/>
+  <text x="600" y="237" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#22c55e" text-anchor="middle">$</text>
+
+  <!-- Brand name -->
+  <text x="600" y="340" font-family="Arial Black, Arial, sans-serif" font-size="86" font-weight="900" fill="#f8fafc" text-anchor="middle" letter-spacing="-2">SpendFixer</text>
+
+  <!-- Tagline -->
+  <text x="600" y="405" font-family="Arial, sans-serif" font-size="32" fill="#94a3b8" text-anchor="middle">Fix Your Spending in 60 Seconds a Day</text>
+
+  <!-- Divider -->
+  <rect x="520" y="440" width="160" height="2" fill="#16a34a" opacity="0.6" rx="1"/>
+
+  <!-- Sub-tagline -->
+  <text x="600" y="490" font-family="Arial, sans-serif" font-size="22" fill="#64748b" text-anchor="middle">Connect your bank. Get one daily snapshot. Take action.</text>
+
+  <!-- URL -->
+  <text x="600" y="580" font-family="Arial, sans-serif" font-size="22" fill="#475569" text-anchor="middle">spendfixer.com</text>
+</svg>

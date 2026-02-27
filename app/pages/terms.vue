@@ -1,6 +1,23 @@
 <script setup lang="ts">
 definePageMeta({ layout: 'default' })
-useHead({ title: 'Terms of Service — SpendFixer' })
+
+const siteUrl = 'https://spendfixer.com'
+
+useSeoMeta({
+  title: 'Terms of Service — SpendFixer',
+  description: 'Read the SpendFixer Terms of Service governing your use of the SpendFixer personal finance platform.',
+  ogTitle: 'Terms of Service — SpendFixer',
+  ogDescription: 'Terms governing your use of SpendFixer.',
+  ogImage: `${siteUrl}/og-image.png`,
+  ogUrl: `${siteUrl}/terms`,
+  twitterCard: 'summary_large_image',
+  twitterTitle: 'Terms of Service — SpendFixer',
+  twitterDescription: 'Terms governing your use of SpendFixer.',
+})
+
+useHead({
+  link: [{ rel: 'canonical', href: `${siteUrl}/terms` }],
+})
 </script>
 
 <template>

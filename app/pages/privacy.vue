@@ -1,6 +1,23 @@
 <script setup lang="ts">
 definePageMeta({ layout: 'default' })
-useHead({ title: 'Privacy Policy — SpendFixer' })
+
+const siteUrl = 'https://spendfixer.com'
+
+useSeoMeta({
+  title: 'Privacy Policy — SpendFixer',
+  description: 'Read the SpendFixer Privacy Policy to understand how we collect, use, and protect your personal and financial information.',
+  ogTitle: 'Privacy Policy — SpendFixer',
+  ogDescription: 'How SpendFixer handles your personal and financial data.',
+  ogImage: `${siteUrl}/og-image.png`,
+  ogUrl: `${siteUrl}/privacy`,
+  twitterCard: 'summary_large_image',
+  twitterTitle: 'Privacy Policy — SpendFixer',
+  twitterDescription: 'How SpendFixer handles your personal and financial data.',
+})
+
+useHead({
+  link: [{ rel: 'canonical', href: `${siteUrl}/privacy` }],
+})
 </script>
 
 <template>

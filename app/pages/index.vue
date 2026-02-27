@@ -1,6 +1,110 @@
 <script setup lang="ts">
 definePageMeta({ layout: 'default' })
-useHead({ title: 'The Finance App That Tells You What to Fix' })
+
+const siteUrl = 'https://spendfixer.com'
+
+useSeoMeta({
+  title: 'SpendFixer — Fix Your Spending in 60 Seconds a Day',
+  description: 'SpendFixer connects to your bank and gives you one daily snapshot of where your money is going. No complicated dashboards. Just clarity.',
+  ogTitle: 'SpendFixer — Fix Your Spending in 60 Seconds a Day',
+  ogDescription: 'SpendFixer connects to your bank and gives you one daily snapshot of where your money is going. No complicated dashboards. Just clarity.',
+  ogImage: `${siteUrl}/og-image.png`,
+  ogUrl: siteUrl,
+  ogType: 'website',
+  twitterCard: 'summary_large_image',
+  twitterTitle: 'SpendFixer — Fix Your Spending in 60 Seconds a Day',
+  twitterDescription: 'SpendFixer connects to your bank and gives you one daily snapshot of where your money is going. No complicated dashboards. Just clarity.',
+})
+
+useHead({
+  link: [{ rel: 'canonical', href: siteUrl }],
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@graph': [
+          {
+            '@type': 'Organization',
+            '@id': `${siteUrl}/#organization`,
+            name: 'SpendFixer',
+            url: siteUrl,
+            logo: {
+              '@type': 'ImageObject',
+              url: `${siteUrl}/logo.png`,
+            },
+          },
+          {
+            '@type': 'WebApplication',
+            '@id': `${siteUrl}/#webapp`,
+            name: 'SpendFixer',
+            url: siteUrl,
+            description: 'SpendFixer connects to your bank and gives you one daily snapshot of where your money is going. No complicated dashboards. Just clarity.',
+            applicationCategory: 'FinanceApplication',
+            operatingSystem: 'Web, iOS, Android',
+            offers: [
+              {
+                '@type': 'Offer',
+                name: 'Free',
+                price: '0',
+                priceCurrency: 'USD',
+              },
+              {
+                '@type': 'Offer',
+                name: 'Plus',
+                price: '7.99',
+                priceCurrency: 'USD',
+              },
+              {
+                '@type': 'Offer',
+                name: 'Pro',
+                price: '14.99',
+                priceCurrency: 'USD',
+              },
+            ],
+          },
+          {
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'What is SpendFixer?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'SpendFixer is a personal finance app that connects to your bank and analyzes your spending. Instead of just showing you charts, it tells you exactly what to fix — unused subscriptions, bad rates, idle cash — and lets you act on it in one tap.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'How does bank sync work?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'SpendFixer uses Plaid, the industry-standard bank connection service trusted by thousands of apps. You connect once and stay connected. No re-authenticating every few days.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Is my financial data secure?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Yes. SpendFixer never stores your bank credentials. All connections are handled by Plaid, which uses bank-level 256-bit encryption. We only receive read-only transaction data.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'How much does SpendFixer cost?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'SpendFixer has a free plan that includes 2 bank connections, auto-categorization, and weekly spending digests — no credit card required. Plus is $7.99/month (or $59/year) for AI insights and daily action items. Pro is $14.99/month (or $119/year) for one-tap fix actions, spending forecasts, and financial coaching.',
+                },
+              },
+            ],
+          },
+        ],
+      }),
+    },
+  ],
+})
 
 const email = ref('')
 const isSubmitted = ref(false)

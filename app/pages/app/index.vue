@@ -1,6 +1,7 @@
 <script setup lang="ts">
 definePageMeta({ layout: 'app' })
-useHead({ title: 'Dashboard' })
+useSeoMeta({ title: 'Dashboard — SpendFixer', robots: 'noindex, nofollow' })
+useHead({ link: [{ rel: 'canonical', href: 'https://spendfixer.com/app' }] })
 
 const userStore = useUserStore()
 const userId = computed(() => userStore.user?.id ?? null)
