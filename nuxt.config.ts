@@ -9,7 +9,38 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxtjs/color-mode',
     '@nuxt/content',
+    '@vite-pwa/nuxt',
   ],
+
+  pwa: {
+    manifest: {
+      name: 'SpendFixer',
+      short_name: 'SpendFixer',
+      description: 'Fix your spending in 60 seconds a day.',
+      theme_color: '#10b981',
+      background_color: '#ffffff',
+      display: 'standalone',
+      start_url: '/',
+      icons: [
+        {
+          src: '/icon-192.png',
+          sizes: '192x192',
+          type: 'image/png',
+        },
+        {
+          src: '/icon-512.png',
+          sizes: '512x512',
+          type: 'image/png',
+        },
+      ],
+    },
+    workbox: {
+      navigateFallback: '/',
+    },
+    devOptions: {
+      enabled: false,
+    },
+  },
 
   content: {
     highlight: {
