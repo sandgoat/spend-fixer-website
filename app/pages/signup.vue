@@ -33,7 +33,7 @@ const handleSignup = async () => {
   isLoading.value = true
   try {
     await userStore.signup(name.value, email.value, password.value)
-    await navigateTo('/app')
+    await navigateTo('/onboarding')
   } catch (e: any) {
     error.value = e?.data?.statusMessage || e?.statusMessage || 'Signup failed'
   } finally {

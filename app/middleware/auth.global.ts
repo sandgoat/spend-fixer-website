@@ -1,5 +1,6 @@
 export default defineNuxtRouteMiddleware(async (to) => {
-  if (!to.path.startsWith('/app')) return
+  const protectedPaths = to.path.startsWith('/app') || to.path === '/onboarding'
+  if (!protectedPaths) return
 
   const userStore = useUserStore()
 
