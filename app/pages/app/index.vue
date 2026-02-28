@@ -105,6 +105,15 @@ watch(userId, () => {
       <p class="mt-1 text-sm text-gray-500">{{ today }} — Here's what to fix today</p>
     </div>
 
+    <!-- Daily Digest hero card -->
+    <DailyDigest
+      class="mb-8"
+      :transactions="recentTransactions"
+      :summary="summary"
+      :user-name="userStore.user?.name ?? ''"
+      :is-loading="isLoading"
+    />
+
     <div v-if="isDemo" class="mb-6 flex items-center justify-between rounded-xl border border-brand-200 bg-brand-50 px-5 py-3">
       <p class="text-sm text-brand-700">
         <strong>Demo mode</strong> — connect your bank to see real data
