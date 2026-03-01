@@ -1,3 +1,5 @@
+import { decrypt } from '~/server/utils/encryption'
+
 export default defineEventHandler(async (event) => {
   const query = getQuery(event)
   const userId = query.userId as string
@@ -22,9 +24,11 @@ export default defineEventHandler(async (event) => {
   for (const item of plaidItems) {
     try {
       const accountIds = item.accounts.map((a) => a.plaidAccountId)
+      // Decrypt access token stored at rest with AES-256-GCM
+      const accessToken = decrypt(item.accessToken)
 
       const response = await client.transactionsRecurringGet({
-        access_token: item.accessToken,
+        access_token: accessToken,
         account_ids: accountIds,
       })
 

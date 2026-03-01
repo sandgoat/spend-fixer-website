@@ -1,4 +1,5 @@
 import type { RemovedTransaction, Transaction as PlaidTransaction } from 'plaid'
+import { decrypt } from '~/server/utils/encryption'
 
 export default defineEventHandler(async (event) => {
   const body = await readBody(event)
@@ -24,9 +25,12 @@ export default defineEventHandler(async (event) => {
   let totalRemoved = 0
 
   for (const item of plaidItems) {
+    // Decrypt access token stored at rest with AES-256-GCM
+    const accessToken = decrypt(item.accessToken)
+
     if (forceRefresh) {
       try {
-        await client.transactionsRefresh({ access_token: item.accessToken })
+        await client.transactionsRefresh({ access_token: accessToken })
         await new Promise((resolve) => setTimeout(resolve, 1500))
       } catch {
         // Refresh may fail on sandbox or if not enabled — continue with sync
@@ -38,7 +42,7 @@ export default defineEventHandler(async (event) => {
 
     while (hasMore) {
       const response = await client.transactionsSync({
-        access_token: item.accessToken,
+        access_token: accessToken,
         cursor,
       })
 
@@ -74,7 +78,7 @@ export default defineEventHandler(async (event) => {
 
     for (const account of item.accounts) {
       const balanceResponse = await client.accountsGet({
-        access_token: item.accessToken,
+        access_token: accessToken,
         options: { account_ids: [account.plaidAccountId] },
       })
 

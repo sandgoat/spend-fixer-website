@@ -160,6 +160,9 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     sessionSecret: process.env.SESSION_SECRET || 'change-me-in-production',
+    // AES-256-GCM key for encrypting Plaid access tokens at rest.
+    // Generate with: node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
+    encryptionKey: process.env.ENCRYPTION_KEY || '',
     plaidClientId: '',
     plaidSecret: '',
     plaidEnv: 'sandbox',

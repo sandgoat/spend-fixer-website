@@ -1,3 +1,5 @@
+import { encrypt } from '~/server/utils/encryption'
+
 export default defineEventHandler(async (event) => {
   const body = await readBody(event)
   const { publicToken, userId } = body || {}
@@ -14,10 +16,13 @@ export default defineEventHandler(async (event) => {
 
   const { access_token: accessToken, item_id: itemId } = exchangeResponse.data
 
+  // Encrypt the access token before persisting to DB (AES-256-GCM)
+  const encryptedAccessToken = encrypt(accessToken)
+
   const plaidItem = await prisma.plaidItem.create({
     data: {
       userId,
-      accessToken,
+      accessToken: encryptedAccessToken,
       itemId,
     },
   })
