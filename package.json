@@ -30,7 +30,7 @@
     "vue-chartjs": "^5.3.3",
     "vue-router": "^4.6.4",
     "@prisma/adapter-pg": "^7.4.1",
-    "better-sqlite3": "^11.0.0"
+    "better-sqlite3": "^12.5.0"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",
