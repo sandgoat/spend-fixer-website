@@ -5,6 +5,7 @@ export default defineEventHandler(async (event) => {
   if (!path.startsWith('/api/')) return
   if (path.startsWith('/api/auth/')) return
   if (path.startsWith('/api/waitlist')) return
+  if (path === '/api/health') return
 
   // Skip auth enforcement if database isn't configured yet
   if (!process.env.DATABASE_URL) {
