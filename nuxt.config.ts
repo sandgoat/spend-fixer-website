@@ -35,7 +35,51 @@ export default defineNuxtConfig({
       ],
     },
     workbox: {
-      navigateFallback: '/',
+      navigateFallback: '/offline',
+      navigateFallbackDenylist: [/^\/api\//],
+      globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2}'],
+      runtimeCaching: [
+        // API calls — NetworkFirst (fresh data when online, cached fallback offline)
+        {
+          urlPattern: /^\/api\/.*/i,
+          handler: 'NetworkFirst',
+          options: {
+            cacheName: 'sf-api-cache',
+            networkTimeoutSeconds: 10,
+            expiration: {
+              maxEntries: 100,
+              maxAgeSeconds: 60 * 60 * 24, // 24 hours
+            },
+            cacheableResponse: { statuses: [0, 200] },
+          },
+        },
+        // Static assets — CacheFirst
+        {
+          urlPattern: /\.(?:js|css|woff2?|png|jpg|jpeg|svg|ico)$/i,
+          handler: 'CacheFirst',
+          options: {
+            cacheName: 'sf-static-cache',
+            expiration: {
+              maxEntries: 200,
+              maxAgeSeconds: 60 * 60 * 24 * 30, // 30 days
+            },
+            cacheableResponse: { statuses: [0, 200] },
+          },
+        },
+        // Google Fonts — CacheFirst
+        {
+          urlPattern: /^https:\/\/fonts\.(googleapis|gstatic)\.com\/.*/i,
+          handler: 'CacheFirst',
+          options: {
+            cacheName: 'sf-fonts-cache',
+            expiration: {
+              maxEntries: 20,
+              maxAgeSeconds: 60 * 60 * 24 * 365,
+            },
+            cacheableResponse: { statuses: [0, 200] },
+          },
+        },
+      ],
     },
     devOptions: {
       enabled: false,
