@@ -7,6 +7,7 @@ const navigation = [
   { name: 'Transactions', href: '/app/transactions' },
   { name: 'Budgets', href: '/app/budgets' },
   { name: 'Goals', href: '/app/goals' },
+  { name: 'Subscriptions', href: '/app/subscriptions' },
   { name: 'Settings', href: '/app/settings' },
 ]
 
