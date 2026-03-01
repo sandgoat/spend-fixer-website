@@ -119,7 +119,6 @@ export default defineNuxtConfig({
       enabled: false,
     },
   },
-  },
 
   colorMode: {
     classSuffix: '',
