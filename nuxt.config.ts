@@ -10,7 +10,42 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@nuxt/content',
     '@vite-pwa/nuxt',
+    '@nuxt/image',
   ],
+
+  // Performance: payload extraction for faster hydration
+  experimental: {
+    payloadExtraction: true,
+  },
+
+  // Performance: compress public assets at build time
+  nitro: {
+    compressPublicAssets: true,
+  },
+
+  // Performance: prerender static marketing/content pages
+  routeRules: {
+    '/': { prerender: true },
+    '/blog': { prerender: true },
+    '/blog/**': { prerender: true },
+    '/compare/**': { prerender: true },
+    '/privacy': { prerender: true },
+    '/terms': { prerender: true },
+    '/contact': { prerender: true },
+  },
+
+  // Performance: image optimization config
+  image: {
+    quality: 80,
+    format: ['webp', 'png'],
+    screens: {
+      xs: 320,
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+    },
+  },
 
   pwa: {
     manifest: {
@@ -37,7 +72,7 @@ export default defineNuxtConfig({
     workbox: {
       navigateFallback: '/offline',
       navigateFallbackDenylist: [/^\/api\//],
-      globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2}'],
+      globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2,webp}'],
       runtimeCaching: [
         // API calls — NetworkFirst (fresh data when online, cached fallback offline)
         {
@@ -55,7 +90,7 @@ export default defineNuxtConfig({
         },
         // Static assets — CacheFirst
         {
-          urlPattern: /\.(?:js|css|woff2?|png|jpg|jpeg|svg|ico)$/i,
+          urlPattern: /\.(?:js|css|woff2?|png|jpg|jpeg|svg|ico|webp)$/i,
           handler: 'CacheFirst',
           options: {
             cacheName: 'sf-static-cache',
@@ -106,6 +141,20 @@ export default defineNuxtConfig({
   app: {
     head: {
       title: 'SpendFixer',
+      // Performance: preconnect to Google Fonts
+      link: [
+        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
+        // Preload OG image for landing page
+        { rel: 'preload', as: 'image', href: '/og-image.svg' },
+      ],
+    },
+  },
+
+  // Performance: CSS code splitting
+  vite: {
+    build: {
+      cssCodeSplit: true,
     },
   },
 

@@ -21,7 +21,7 @@ const isActive = (href: string) => route.path === href
     <aside class="fixed inset-y-0 left-0 z-30 hidden w-60 border-r border-gray-200 bg-white lg:block">
       <div class="flex h-20 items-center px-6">
         <NuxtLink to="/">
-          <img src="/logo.png" alt="SpendFixer" class="h-8">
+          <NuxtImg src="/logo.png" alt="SpendFixer" class="h-8" format="webp" width="128" height="32" loading="lazy" />
         </NuxtLink>
       </div>
 
@@ -87,7 +87,7 @@ const isActive = (href: string) => route.path === href
           <div class="absolute inset-0 bg-black/40 backdrop-blur-sm" @click="isMobileMenuOpen = false" />
           <aside class="absolute inset-y-0 left-0 w-60 bg-white shadow-2xl">
             <div class="flex h-20 items-center px-6">
-              <img src="/logo.png" alt="SpendFixer" class="h-8">
+              <NuxtImg src="/logo.png" alt="SpendFixer" class="h-8" format="webp" width="128" height="32" loading="lazy" />
             </div>
             <nav class="mt-2 space-y-0.5 px-3">
               <NuxtLink

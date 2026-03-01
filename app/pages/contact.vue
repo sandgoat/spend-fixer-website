@@ -30,7 +30,7 @@ useHead({
     <header class="border-b border-gray-200 bg-cream px-6 py-4">
       <div class="mx-auto flex max-w-4xl items-center justify-between">
         <NuxtLink to="/">
-          <img src="/logo.png" alt="SpendFixer" class="h-8">
+          <NuxtImg src="/logo.png" alt="SpendFixer" class="h-8" format="webp" width="128" height="32" loading="lazy" />
         </NuxtLink>
         <nav class="flex gap-6 text-sm text-gray-500">
           <NuxtLink to="/privacy" class="hover:text-brand-600">Privacy</NuxtLink>
@@ -138,7 +138,7 @@ useHead({
     <footer class="border-t border-gray-200 bg-cream py-10">
       <div class="mx-auto max-w-4xl px-6 lg:px-10">
         <div class="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
-          <img src="/logo.png" alt="SpendFixer" class="h-8">
+          <NuxtImg src="/logo.png" alt="SpendFixer" class="h-8" format="webp" width="128" height="32" loading="lazy" />
           <div class="flex gap-6 text-sm text-gray-400">
             <NuxtLink to="/privacy" class="hover:text-brand-600">Privacy Policy</NuxtLink>
             <NuxtLink to="/terms" class="hover:text-brand-600">Terms of Service</NuxtLink>

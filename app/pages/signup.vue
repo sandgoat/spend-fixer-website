@@ -45,7 +45,7 @@ const handleSignup = async () => {
 <template>
   <div class="flex min-h-screen">
     <div class="hidden w-1/2 bg-brand-950 lg:flex lg:flex-col lg:justify-between lg:p-12">
-      <img src="/logo.png" alt="SpendFixer" class="h-5 w-auto max-w-[200px] brightness-0 invert opacity-90">
+      <NuxtImg src="/logo.png" alt="SpendFixer" class="h-5 w-auto max-w-[200px] brightness-0 invert opacity-90" format="webp" width="200" height="20" loading="lazy" />
       <div>
         <p class="font-display text-3xl font-bold text-white">Your money deserves more than a pie chart.</p>
         <p class="mt-4 max-w-md text-brand-300">AI that finds what's costing you — and fixes it in one tap. Free to start.</p>
@@ -56,7 +56,7 @@ const handleSignup = async () => {
     <div class="flex flex-1 items-center justify-center bg-cream px-6">
       <div class="w-full max-w-sm">
         <NuxtLink to="/" class="lg:hidden">
-          <img src="/logo.png" alt="SpendFixer" class="h-10">
+          <NuxtImg src="/logo.png" alt="SpendFixer" class="h-10" format="webp" width="160" height="40" loading="lazy" />
         </NuxtLink>
         <h1 class="mt-8 font-display text-2xl font-bold text-brand-950 lg:mt-0">Create your account</h1>
         <p class="mt-2 text-sm text-gray-500">Start fixing your spending in 60 seconds</p>

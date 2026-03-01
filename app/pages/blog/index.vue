@@ -27,7 +27,7 @@ function formatDate(dateStr: string) {
     <nav class="fixed top-0 z-50 w-full bg-cream/90 backdrop-blur-md">
       <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-10">
         <NuxtLink to="/" class="shrink-0">
-          <img src="/logo.png" alt="SpendFixer" class="h-8 sm:h-10">
+          <NuxtImg src="/logo.png" alt="SpendFixer" class="h-8 sm:h-10" format="webp" width="160" height="40" loading="lazy" />
         </NuxtLink>
         <div class="hidden items-center gap-10 md:flex">
           <NuxtLink to="/" class="text-sm font-medium text-gray-600 transition-colors hover:text-brand-700">Home</NuxtLink>

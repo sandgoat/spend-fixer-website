@@ -12,12 +12,18 @@ const selectedCategory = ref<string | null>(null)
       <p class="mt-1 text-sm text-gray-500">Charts and trends for your finances</p>
     </div>
 
-    <!-- Top row: donut + line -->
+    <!-- Top row: donut + line (ClientOnly: Chart.js is client-only) -->
     <div class="grid gap-6 lg:grid-cols-2">
-      <ChartsSpendingByCategory
-        @filter-category="(cat) => selectedCategory = cat"
-      />
-      <ChartsSpendingOverTime />
+      <ClientOnly>
+        <ChartsSpendingByCategory
+          @filter-category="(cat) => selectedCategory = cat"
+        />
+        <template #fallback><div class="h-64 animate-pulse rounded-xl bg-gray-100" /></template>
+      </ClientOnly>
+      <ClientOnly>
+        <ChartsSpendingOverTime />
+        <template #fallback><div class="h-64 animate-pulse rounded-xl bg-gray-100" /></template>
+      </ClientOnly>
     </div>
 
     <!-- Filter badge -->
@@ -33,10 +39,16 @@ const selectedCategory = ref<string | null>(null)
       </button>
     </div>
 
-    <!-- Bottom row: bar + area -->
+    <!-- Bottom row: bar + area (ClientOnly: Chart.js is client-only) -->
     <div class="mt-6 grid gap-6 lg:grid-cols-2">
-      <ChartsIncomeVsExpenses />
-      <ChartsNetWorthOverTime />
+      <ClientOnly>
+        <ChartsIncomeVsExpenses />
+        <template #fallback><div class="h-64 animate-pulse rounded-xl bg-gray-100" /></template>
+      </ClientOnly>
+      <ClientOnly>
+        <ChartsNetWorthOverTime />
+        <template #fallback><div class="h-64 animate-pulse rounded-xl bg-gray-100" /></template>
+      </ClientOnly>
     </div>
 
     <!-- Insight callouts -->

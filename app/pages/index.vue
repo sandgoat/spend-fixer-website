@@ -207,7 +207,7 @@ const pricingTiers = [
     <nav class="fixed top-0 z-50 w-full bg-cream/90 backdrop-blur-md">
       <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-10">
         <NuxtLink to="/" class="shrink-0">
-          <img src="/logo.png" alt="SpendFixer" class="h-8 sm:h-10">
+          <NuxtImg src="/logo.png" alt="SpendFixer" class="h-8 sm:h-10" format="webp" width="160" height="40" />
         </NuxtLink>
         <div class="hidden items-center gap-10 md:flex">
           <a href="#problem" class="text-sm font-medium text-gray-600 transition-colors hover:text-brand-700">The Problem</a>
@@ -596,7 +596,7 @@ const pricingTiers = [
     <footer class="border-t border-gray-200 bg-cream py-10">
       <div class="mx-auto max-w-7xl px-6 lg:px-10">
         <div class="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
-          <img src="/logo.png" alt="SpendFixer" class="h-8">
+          <NuxtImg src="/logo.png" alt="SpendFixer" class="h-8" format="webp" width="128" height="32" loading="lazy" />
           <div class="flex gap-6 text-sm text-gray-400">
             <NuxtLink to="/blog" class="hover:text-brand-600">Blog</NuxtLink>
             <NuxtLink to="/privacy" class="hover:text-brand-600">Privacy Policy</NuxtLink>
