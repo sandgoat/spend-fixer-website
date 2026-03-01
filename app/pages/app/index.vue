@@ -177,7 +177,13 @@ watch(userId, () => {
         </div>
       </div>
 
-      <div class="mt-8 grid gap-8 lg:grid-cols-2">
+      <!-- Charts row -->
+    <div class="mt-8 grid gap-6 lg:grid-cols-2">
+      <ChartsSpendingByCategory @filter-category="(cat) => console.log('filter:', cat)" />
+      <ChartsSpendingOverTime />
+    </div>
+
+    <div class="mt-8 grid gap-8 lg:grid-cols-2">
         <div>
           <h2 class="font-display text-lg font-bold text-brand-950">Recent Transactions</h2>
           <div v-if="recentTransactions.length > 0" class="mt-4 divide-y divide-gray-100 rounded-xl border border-gray-200 bg-white">
