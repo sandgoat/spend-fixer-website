@@ -1,5 +1,5 @@
 import type { RemovedTransaction, Transaction as PlaidTransaction } from 'plaid'
-import { decrypt } from '~/server/utils/encryption'
+import { decrypt } from '../../utils/encryption'
 
 export default defineEventHandler(async (event) => {
   const body = await readBody(event)

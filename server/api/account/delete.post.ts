@@ -30,8 +30,8 @@
  * personally identifiable data stored for the user.
  */
 
-import { getUserFromEvent, clearAuthCookie } from '~/server/utils/auth'
-import { decrypt } from '~/server/utils/encryption'
+import { getUserFromEvent, clearAuthCookie } from '../../../utils/auth'
+import { decrypt } from '../../../utils/encryption'
 
 export default defineEventHandler(async (event) => {
   // Step 1: Authenticate

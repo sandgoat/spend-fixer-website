@@ -1,4 +1,4 @@
-import { encrypt } from '~/server/utils/encryption'
+import { encrypt } from '../../utils/encryption'
 
 export default defineEventHandler(async (event) => {
   const body = await readBody(event)

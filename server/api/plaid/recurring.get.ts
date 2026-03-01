@@ -1,4 +1,4 @@
-import { decrypt } from '~/server/utils/encryption'
+import { decrypt } from '../../utils/encryption'
 
 export default defineEventHandler(async (event) => {
   const query = getQuery(event)
