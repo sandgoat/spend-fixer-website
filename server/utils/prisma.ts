@@ -1,4 +1,5 @@
 import { PrismaClient } from '@prisma/client'
+import { PrismaPg } from '@prisma/adapter-pg'
 
 const globalForPrisma = globalThis as unknown as { prisma: PrismaClient | undefined }
 
@@ -7,7 +8,8 @@ export function getPrisma(): PrismaClient {
     throw new Error('DATABASE_URL is not configured')
   }
   if (!globalForPrisma.prisma) {
-    globalForPrisma.prisma = new PrismaClient()
+    const adapter = new PrismaPg(process.env.DATABASE_URL)
+    globalForPrisma.prisma = new PrismaClient({ adapter })
   }
   return globalForPrisma.prisma
 }
