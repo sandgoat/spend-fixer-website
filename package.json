@@ -15,7 +15,6 @@
     "@nuxtjs/color-mode": "^4.0.0",
     "@nuxtjs/tailwindcss": "^6.14.0",
     "@pinia/nuxt": "^0.11.3",
-    "@prisma/adapter-pg": "^7.4.1",
     "@prisma/client": "^7.4.1",
     "@vite-pwa/nuxt": "^1.1.1",
     "@vueuse/core": "^14.2.1",
@@ -31,8 +30,7 @@
     "prisma": "^7.4.1",
     "vue": "^3.5.28",
     "vue-chartjs": "^5.3.3",
-    "vue-router": "^4.6.4",
-    "pg": "^8.13.0"
+    "vue-router": "^4.6.4"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",
