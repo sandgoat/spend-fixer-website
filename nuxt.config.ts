@@ -8,7 +8,6 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@vueuse/nuxt',
     '@nuxtjs/color-mode',
-    '@nuxt/content',
     '@vite-pwa/nuxt',
     '@nuxt/image',
   ],
@@ -120,11 +119,6 @@ export default defineNuxtConfig({
       enabled: false,
     },
   },
-
-  content: {
-    highlight: {
-      theme: 'github-dark',
-    },
   },
 
   colorMode: {
